@@ -166,3 +166,12 @@ StringUpperCase
   string:upper-case "ab" => "AB"
   string:upper-case "a" => "A"
   string:upper-case "" => ""
+
+AsciiCode
+	extensions [string]
+	string:ascii-code "J" => 74
+	string:ascii-code "R" => 82
+	string:ascii-code " " => 32
+	string:ascii-code "1" => 49
+	string:ascii-code "@" => 64
+	string:ascii-code "~" => 126
