@@ -7,39 +7,36 @@ import org.nlogo.api.ExtensionException;
 import org.nlogo.api.LogoException;
 import org.nlogo.api.Syntax;
 
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-
-public class AsciiCode extends DefaultReporter {
-	// take a character and return the ascii code
+public class FromAscii extends DefaultReporter 
+{
+	// take an integer ascii code and return the letter
 	
-	static CharsetEncoder asciiEncoder =
-		Charset.forName("US-ASCII").newEncoder();
-
 	public Syntax getSyntax()
 	{
 		return Syntax.reporterSyntax(
-				new int[]{ Syntax.StringType() }, Syntax.NumberType()
+				new int[]{ Syntax.NumberType() }, Syntax.StringType()
 			);
 	}
-
 
 	public Object report(Argument args[], Context context)
 		throws ExtensionException, LogoException
 	{
 		// use typesafe helper method from
-		// org.nlogo.api.Argument to access argument
-		char c;
+		// org.nlogo.api.Argument ot access argument
+		int i;
 		try {
-			c = args[0].getString().charAt(0);
-		} catch (LogoException e) {
+			i = args[0].getIntValue();
+		}
+		catch(LogoException e) {
 			throw new ExtensionException(e.getMessage());
 		}
 		
-		if (asciiEncoder.canEncode(c)) {
-			return Double.valueOf((int) c);
+		if (i < 0 || i > 128) {
+			return "";
 		} else {
-			return Double.valueOf(0);
+			char c = (char) i;
+			String s = new Character(c).toString();
+			return s;
 		}
 	}
 }

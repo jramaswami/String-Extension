@@ -168,10 +168,23 @@ StringUpperCase
   string:upper-case "" => ""
 
 AsciiCode
-	extensions [string]
+  extensions [string]
 	string:ascii-code "J" => 74
 	string:ascii-code "R" => 82
 	string:ascii-code " " => 32
 	string:ascii-code "1" => 49
 	string:ascii-code "@" => 64
 	string:ascii-code "~" => 126
+	string:ascii-code "é" => 0
+
+FromAscii
+  extensions [string]
+	string:from-ascii 74 => "J"
+	string:from-ascii 82 => "R"
+	string:from-ascii 32 => ""
+	string:from-ascii 49 => "1"
+	string:from-ascii 64 => "@"
+	string:from-ascii 126 => "~"
+	string:from-ascii -1 => ""
+	string:from-ascii 290 => ""
+	string:from-ascii 74.5 => "J"

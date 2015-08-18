@@ -21,5 +21,7 @@ public class StringExtension extends DefaultClassManager
         pM.addPrimitive ( "starts-with?",              new StartsWith () ) ;
         pM.addPrimitive ( "trim",                      new Trim () ) ;
         pM.addPrimitive ( "upper-case",                new UpperCase () ) ;
+        pM.addPrimitive ( "ascii-code",                new AsciiCode () ) ;
+        pM.addPrimitive ( "from-ascii",                new FromAscii () ) ;
     }
 }
