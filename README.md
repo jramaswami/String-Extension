@@ -20,6 +20,8 @@ The following reporters are provided:
  * `starts-with?`, `ends-with?` -- match a string against the start or end of another string
  * `trim` -- removes initial and trailing whitespace
  * `upper-case`, `lower-case` -- alter the letter case of strings
+ * `ascii-code` -- returns the ASCII index of the given character (the first character of the string), or 0 for non-ASCII characters
+ * `from-ascii` -- returns the ASCII character corresponding to the given small integer index or, "" if integer does not correspond to ASCII character
 
 ## Building
 
@@ -35,8 +37,6 @@ To build a release package, run `make string.zip`.
 
 Ideas for possible additional primitives:
 
- * `ascii-code <character>` -- returns the ASCII index of the given character (the first character of the string), or 0 for non-ASCII characters
- * `from-ascii <integer>` -- returns the ASCII character corresponding to the given small integer index
  * `last-index-of <needle> <haystack>` -- reports the index of the last occurrence of needle in haystack, or false, if needle does not occur
  * `split-on-character <string> <single-char-delimiter>` -- reports a list by splitting string using the given single character`
  * `split-on-string <string> <string-delimiter>` -- reports a list formed by splitting string using the string-delimiter
