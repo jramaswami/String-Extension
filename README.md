@@ -21,7 +21,7 @@ The following reporters are provided:
  * `trim` -- removes initial and trailing whitespace
  * `upper-case`, `lower-case` -- alter the letter case of strings
  * `ascii-code` -- returns the ASCII index of the given character (the first character of the string), or 0 for non-ASCII characters
- * `from-ascii` -- returns the ASCII character corresponding to the given small integer index or, "" if integer does not correspond to ASCII character
+ * `from-ascii` -- returns the ASCII character corresponding to the given small integer index or, "" if integer does not correspond to an ASCII character
 
 ## Building
 
